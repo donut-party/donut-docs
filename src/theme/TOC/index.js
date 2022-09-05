@@ -8,7 +8,7 @@ export default function TOC({ toc, editUrl, ...props }) {
 
   return (
     <div className="toc-wrapper sticky top-8">
-      <h2 class="text-xs text-gray-400 font-semibold tracking-wider uppercase mb-0">Contents</h2>
+      <h2 class="text-gray-400 font-bold tracking-wider uppercase mb-0">Contents</h2>
       <OriginalTOC toc={toc} {...props} />
       <EditThisPage editUrl={editUrl} />
     </div>
