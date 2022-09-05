@@ -19,8 +19,13 @@
   --ifm-color-primary-lighter: #359962;
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --docusaurus-highlighted-code-luine-bg: rgba(0, 0, 0, 0.1);
   --doc-item-container-width: 42rem;
+}
+
+:root{
+  --ifm-global-shadow-lw: 0 1px 1px 0 #f3f3f3;
+  --ifm-toc-border-color: #f3f3f3;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -35,12 +40,40 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-/* my customizations */
+/* ---
+ * my customizations
+ * ---
+ */
+
+
+
+/*
+ * left sidebar
+ */
 #__docusaurus [class^=sidebar_] > .menu {
-  padding: 0;
+  padding: 1rem;
   padding-block-end: 2rem;
 }
 
+#__docusaurus [class^=sidebar_] {
+  /* -webkit-padding-before: 1rem; */
+  /* max-height: calc(100vh - var(--ifm-navbar-height)); */
+  /* overflow-y: auto; */
+  /* padding-block-start: 1rem; */
+  /* position: static; */
+  /* padding-top: calc(1rem + var(--ifm-navbar-height)); */
+  /* padding-left: 1rem; */
+  /* padding-right: 1rem; */
+}
+
+/*
+ * main content area
+ *
+ * the overall idea here is to allow the center column to be centered, with the
+ * right TOC
+ */
+
+/* width for the element that is the direct parent of the actual content */
 #__docusaurus [class*=docItemContainer_] {
   flex-grow: 1;
   max-width: var(--doc-item-container-width);
@@ -48,11 +81,29 @@
 }
 
 #__docusaurus [class*=docMainContainer_]>.container>.row>.col {
+  padding: 0
+}
+
+
+/* keeps center column content centered */
+#__docusaurus [class*=docMainContainer_]>.container>.row>.col:first-child {
   display: flex;
   justify-content: center;
   min-width: 0;
+  padding-right: 5rem;
 }
 
+/* right inner TOC width */
+#__docusaurus [class*=docMainContainer_]>.container>.row>.col:last-child {
+  --ifm-col-width:18rem;
+}
+
+/* allow the whole main content area to expand to fill */
+#__docusaurus [class*=docItemCol_] {
+  max-width: none!important;
+}
+
+/* allow the center column to expand to fill */
 [class ^=docMainContainer_node_modules] .container {
   max-width: 100%
 }
