@@ -55,15 +55,44 @@
   padding-block-end: 2rem;
 }
 
-#__docusaurus [class^=sidebar_] {
-  /* -webkit-padding-before: 1rem; */
-  /* max-height: calc(100vh - var(--ifm-navbar-height)); */
-  /* overflow-y: auto; */
-  /* padding-block-start: 1rem; */
-  /* position: static; */
-  /* padding-top: calc(1rem + var(--ifm-navbar-height)); */
-  /* padding-left: 1rem; */
-  /* padding-right: 1rem; */
+/*
+ * menu links
+ */
+
+#__docusaurus .menu__link {
+  align-items: center;
+  display: flex;
+  font-size: .813rem;
+  font-weight: 500;
+  letter-spacing: -.01em;
+  line-height: 16px;
+  transition: opacity .2s ease-out;
+  padding: .5rem 1rem;
+}
+
+
+#__docusaurus .theme-doc-sidebar-item-link-level-1>.menu__link {
+  color: var(--sidebar-category-c);
+  font-size: .938rem;
+  font-weight: 600;
+  line-height: 100%;
+}
+
+#__docusaurus .theme-doc-sidebar-item-category-level-1>.menu__list-item-collapsible>.menu__link {
+  color: var(--sidebar-category-c);
+  font-size: .938rem;
+  font-weight: 600;
+  line-height: 100%;
+}
+
+#__docusaurus .menu__link--sublist:after {
+  -webkit-margin-end: var(--dropdown-icon-gap);
+  background: var(--ifm-menu-link-sublist-icon) center/var(--dropdown-icon-width) var(--dropdown-icon-height);
+  background-repeat: no-repeat;
+  height: var(--dropdown-icon-height);
+  margin-inline-end: var(--dropdown-icon-gap);
+  min-width: auto;
+  width: var(--dropdown-icon-width);
 }
 
 /*
@@ -72,6 +101,14 @@
  * the overall idea here is to allow the center column to be centered, with the
  * right TOC
  */
+
+[class ^=docMainContainer_node_modules] .container {
+  padding-top: 2rem !important;
+}
+
+.theme-doc-breadcrumbs {
+  padding: 1rem 0 0rem;
+}
 
 /* width for the element that is the direct parent of the actual content */
 #__docusaurus [class*=docItemContainer_] {
@@ -98,6 +135,10 @@
   --ifm-col-width:18rem;
 }
 
+.table-of-contents__left-border {
+  border: none;
+}
+
 /* allow the whole main content area to expand to fill */
 #__docusaurus [class*=docItemCol_] {
   max-width: none!important;
@@ -106,4 +147,26 @@
 /* allow the center column to expand to fill */
 [class ^=docMainContainer_node_modules] .container {
   max-width: 100%
+}
+
+
+/*
+ *  right col
+ */
+
+.toc-wrapper {
+  max-height: calc(100vh - (var(--ifm-navbar-height) + 2rem));
+  overflow-y: auto;
+  position: sticky;
+  top: calc(var(--ifm-navbar-height) + 3rem);
+  width: calc(var(--ifm-col-width) - 1rem);
+}
+
+#__docusaurus [class^=tableOfContents_node_modules] {
+  max-height: 100%;
+  overflow-y: auto;
+  position: static;
+  top: auto;
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+  margin-bottom: 1rem;
 }
