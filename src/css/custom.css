@@ -20,6 +20,7 @@
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --doc-item-container-width: 42rem;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -32,4 +33,26 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* my customizations */
+#__docusaurus [class^=sidebar_] > .menu {
+  padding: 0;
+  padding-block-end: 2rem;
+}
+
+#__docusaurus [class*=docItemContainer_] {
+  flex-grow: 1;
+  max-width: var(--doc-item-container-width);
+  min-width: 0;
+}
+
+#__docusaurus [class*=docMainContainer_]>.container>.row>.col {
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+}
+
+[class ^=docMainContainer_node_modules] .container {
+  max-width: 100%
 }
