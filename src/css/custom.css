@@ -46,6 +46,7 @@
   --ifm-color-primary-lightest: #4dc0f4;
   --ifm-hover-overlay: #f0f9ff;
 }
+/* end colors */
 
 :root{
   --ifm-global-shadow-lw: 0 1px 1px 0 #f3f3f3; /* for the top bar */
@@ -57,6 +58,9 @@
   --ifm-navbar-padding-vertical: 0;
   --ifm-navbar-padding-horizontal: 1rem;
   --markdown-text-intro-c: #35404e;
+  --ifm-menu-link-padding-vertical: .5rem;
+  --ifm-menu-link-padding-horizontal: 0;
+
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -115,25 +119,40 @@
  * left sidebar
  */
 #__docusaurus [class^=sidebar_] > .menu {
-  padding: 1rem;
-  padding-block-end: 2rem;
+  padding: 1rem 1.5rem 2rem 1rem;
+  /* padding-block-end: 2rem; */
 }
 
 /*
  * menu links
  */
 
+/* toggle collapse caret */
+:root {
+  --dropdown-icon-gap: 0.4rem;
+  --dropdown-icon-height: 1.25rem;
+  --dropdown-icon-width: 1.25rem;
+}
+
 #__docusaurus .menu__link {
   align-items: center;
   display: flex;
+  flex: none; /* for correct caret position */
   font-size: .813rem;
   font-weight: 500;
   letter-spacing: -.01em;
   line-height: 16px;
   transition: opacity .2s ease-out;
-  padding: .5rem 1rem;
 }
 
+.menu__list .menu__list, .menu__list-item:not(:first-child) {
+  margin-top: 0;
+}
+
+#__docusaurus .menu__list-item .menu__list .menu__link {
+  /* -webkit-padding-start: calc(var(--dropdown-icon-width) + var(--dropdown-icon-gap)); */
+  padding-inline-start: calc(var(--dropdown-icon-width) + var(--dropdown-icon-gap));
+}
 
 #__docusaurus .theme-doc-sidebar-item-link-level-1>.menu__link {
   /* color: var(--sidebar-category-c); */
@@ -142,15 +161,34 @@
   line-height: 100%;
 }
 
+/* category sections */
+#__docusaurus .theme-doc-sidebar-item-category-level-1>.menu__list-item-collapsible:hover {
+  background: none;
+}
+
 #__docusaurus .theme-doc-sidebar-item-category-level-1>.menu__list-item-collapsible>.menu__link {
-  /* color: var(--sidebar-category-c); */
+  color: var(--sidebar-category-c);
   font-size: .938rem;
   font-weight: 600;
   line-height: 100%;
 }
+/* end category sections */
+
 
 .menu__link--active {
   --ifm-menu-color-active: var(--ifm-color-primary-darker);
+}
+
+/* the caret */
+#__docusaurus .menu__link--sublist {
+  -webkit-padding-start: 0;
+  -webkit-padding-end: 0;
+  align-items: center;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  padding-inline-end: 0;
+  padding-inline-start: 0;
 }
 
 #__docusaurus .menu__link--sublist:after {
@@ -161,7 +199,20 @@
   margin-inline-end: var(--dropdown-icon-gap);
   min-width: auto;
   width: var(--dropdown-icon-width);
+  content: " ";
+  filter: var(--ifm-menu-link-sublist-icon-filter);
 }
+
+.menu__link--sublist:after {
+  background: var(--ifm-menu-link-sublist-icon) 50%/2rem 2rem;
+  content: " ";
+  filter: var(--ifm-menu-link-sublist-icon-filter);
+  height: 1.25rem;
+  min-width: 1.25rem;
+  transform: rotate(180deg);
+  transition: transform var(--ifm-transition-fast) linear;
+}
+/* end the caret */
 
 /*
  * main content area
