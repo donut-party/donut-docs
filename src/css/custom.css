@@ -48,6 +48,7 @@
 }
 /* end colors */
 
+/* main customizations */
 :root{
   --ifm-global-shadow-lw: 0 1px 1px 0 #f3f3f3; /* for the top bar */
   --ifm-toc-border-color: #f3f3f3;
@@ -60,7 +61,12 @@
   --markdown-text-intro-c: #35404e;
   --ifm-menu-link-padding-vertical: .5rem;
   --ifm-menu-link-padding-horizontal: 0;
-
+  /* code */
+  --ifm-code-background: #f0f0f0;
+  --ifm-code-border-radius: .25rem;
+  --ifm-code-font-size: 85%;
+  --ifm-code-padding-horizontal: .4rem;
+  --ifm-code-padding-vertical: .2rem;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -335,4 +341,13 @@
 .markdown>h1+p, .markdown>h1+p+p {
   color: var(--markdown-text-intro-c);
   font-size: 1.25rem;
+}
+
+
+/*
+ * code
+ */
+
+code {
+  border: none;
 }
