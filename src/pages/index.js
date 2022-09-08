@@ -17,17 +17,17 @@ function HomepageHeader() {
 const features = [
   {
     name: 'Clojure',
-    description: 'Clojure\'s  philosophy of simplicity and stability means that the code you write today will work years from now. Get off the upgrade treadmill and focus on real features.',
+    description: `Clojure's philosophy of simplicity and stability means you can stop fighting your language and focus on real features.`,
     Icon: UserGroupIcon,
   },
   {
     name: 'Code',
-    description: 'Donut pulls together a suite of tried-and-true libraries for single-page app development, taking care of the grunt work so you can do the work that matters.',
+    description: `Donut builds on proven libraries for single-page app development, taking care of the grunt work so you can do the work that matters.`,
     icon: ScaleIcon,
   },
   {
     name: 'Community',
-    description: 'We are committed to creating an excellent framework that empowers everyone to create products, and to fostering a kind, friendly, diverse community in pursuit of that goal.',
+    description: `Whether you want to build an app or hack on the framework, join a kind and enthusiastic community as we help each other build something cool!`,
     icon: BoltIcon,
   },
 ]
