@@ -27,7 +27,7 @@ const features = [
   },
   {
     name: 'Community',
-    description: `Whether you want to build an app or hack on the framework, join a kind and enthusiastic community as we help each other build something cool!`,
+    description: `Whether you want to create an app or hack on the framework, join a kind and enthusiastic community as we help each other build something cool!`,
     icon: BoltIcon,
   },
 ]
@@ -63,6 +63,10 @@ export function Features() {
   )
 }
 
+function handleSubmit(e){
+  e.preventDefault();
+};
+
 
 export default function Home() {
   return (
@@ -86,23 +90,33 @@ export default function Home() {
 
                 </p>
 
-                <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                  <div className="rounded-md shadow">
-                    <a
-                      href="#"
-                      className="flex w-full items-center justify-center rounded-md border border-transparent bg-pink-600 px-8 py-3 text-base font-medium text-white hover:bg-pink-700 md:py-4 md:px-10 md:text-lg"
-                    >
-                      Get started
-                    </a>
-                  </div>
-                  <div className="mt-3 sm:mt-0 sm:ml-3">
-                    <a
-                      href="#"
-                      className="flex w-full items-center justify-center rounded-md border border-transparent bg-pink-100 px-8 py-3 text-base font-medium text-pink-700 hover:bg-pink-200 md:py-4 md:px-10 md:text-lg"
-                    >
-                      Live demo
-                    </a>
-                  </div>
+                <div className="text-gray-500">
+                  Get notified when Donut is officially released:
+                </div>
+
+                <div className="mt-2 sm:mt-2 sm:flex sm:justify-center lg:justify-start">
+
+                  <form method="POST"
+                        action="https://script.google.com/macros/s/AKfycbyA2z74G7c3TxuRl5eoX0RbiJNP6_sGat-XHmQvzKApuMqnvpVtJ7fI-ggISwCfNaXg/exec"
+                        onSubmit={handleSubmit}>
+                    <div>
+                      <input className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 w-48 mr-2
+                             border sm:text-sm border-gray-300 rounded-md px-3 py-2"
+                             name="Email"
+                             type="email"
+                             placeholder="Email"
+                             required/>
+                      <input className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 w-48
+                             border sm:text-sm border-gray-300 rounded-md px-3 py-2"
+                             name="Name"
+                             type="text"
+                             placeholder="Name"/>
+                    </div>
+                    <div className="mt-2">
+                      <button className="p-2 bg-pink-600 border-0 text-white font-bold rounded-md"
+                              type="submit">Join mailing list</button>
+                    </div>
+                  </form>
                 </div>
               </div>
             </main>
