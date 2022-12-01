@@ -65,6 +65,26 @@ export function Features() {
 
 function handleSubmit(e){
   e.preventDefault();
+  const form=e.target;
+  const data = new FormData(form);
+  form.querySelector("input[type=email]").disabled=true;
+  form.querySelector("input[type=text]").disabled=true;
+  form.querySelector("button").disabled=true;
+  form.querySelector("span.submitting").classList.remove("hidden");
+
+  const action = e.target.action;
+  fetch(action, {
+    method: 'POST',
+    body: data,
+  }).then(() => {
+    form.reset();
+    form.querySelector("input[type=email]").disabled=false;
+    form.querySelector("input[type=text]").disabled=false;
+    form.querySelector("button").disabled=false;
+    form.querySelector("span.submitting").classList.add("hidden");
+    form.querySelector("span.submitted").classList.remove("hidden");
+    alert("Success! Thank you :)");
+  })
 };
 
 
@@ -115,6 +135,8 @@ export default function Home() {
                     <div className="mt-2">
                       <button className="p-2 bg-pink-600 border-0 text-white font-bold rounded-md"
                               type="submit">Join mailing list</button>
+                      <span className="submitting ml-2 text-sm text-gray-500 italic hidden">submitting...</span>
+                      <span className="submitted ml-2 text-sm text-gray-500 hidden">success! thank you!</span>
                     </div>
                   </form>
                 </div>
