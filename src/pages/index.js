@@ -67,9 +67,8 @@ function handleSubmit(e){
   e.preventDefault();
   const form=e.target;
   const data = new FormData(form);
-  console.log(form, form.querySelector("input[type=email]"), form.querySelector("input[type=text]"), form.querySelector("button"));
   form.querySelector("input[type=email]").disabled=true;
-  form.querySelector("input[type=text]").disabled=true;
+  form.querySelector("input.name").disabled=true;
   form.querySelector("button").disabled=true;
   form.querySelector("span.submitting").classList.remove("hidden");
 
@@ -80,11 +79,10 @@ function handleSubmit(e){
   }).then(() => {
     form.reset();
     form.querySelector("input[type=email]").disabled=false;
-    form.querySelector("input[type=text]").disabled=false;
+    form.querySelector("input.name").disabled=false;
     form.querySelector("button").disabled=false;
     form.querySelector("span.submitting").classList.add("hidden");
     form.querySelector("span.submitted").classList.remove("hidden");
-    alert("Success! Thank you :)");
   })
 }
 
@@ -126,7 +124,7 @@ export default function Home() {
                              type="email"
                              placeholder="Email"
                              required/>
-                      <input className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 w-48
+                      <input className="name shadow-sm focus:ring-indigo-500 focus:border-indigo-500 w-48
                              border sm:text-sm border-gray-300 rounded-md px-3 py-2"
                              name="Name"
                              type="text"
