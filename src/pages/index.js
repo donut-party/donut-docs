@@ -143,9 +143,9 @@ export default function Home() {
             </main>
           </div>
         </div>
-        <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:flex hidden justify-center items-center sm:hidden md:flex">
+        <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 flex justify-center items-center mb-10 ">
                    <img
-                     className="max-w-sm md:max-w-xs sm:max-w-xs lg:max-w-sm"
+                     className="max-w-xs md:max-w-xs sm:max-w-xs lg:max-w-xs xl:max-w-sm"
             src="/img/DonutLogoDonutColorRGB.png"
             alt=""
           />
