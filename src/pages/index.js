@@ -67,7 +67,7 @@ function handleSubmit(e){
   e.preventDefault();
   const form=e.target;
   const data = new FormData(form);
-  console.log(form);
+  console.log(form, form.querySelector("input[type=email]"), form.querySelector("input[type=text]"), form.querySelector("button"));
   form.querySelector("input[type=email]").disabled=true;
   form.querySelector("input[type=text]").disabled=true;
   form.querySelector("button").disabled=true;
