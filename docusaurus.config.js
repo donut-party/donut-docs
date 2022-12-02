@@ -63,15 +63,15 @@ const config = {
           src: 'img/donut-pink-sprinkles-96.jpg',
         },
         items: [
+          // {
+          //   type: 'doc',
+          //   docId: 'intro',
+          //   position: 'left',
+          //   label: 'Tutorial',
+          // },
+          // {to: '/blog', label: 'Blog', position: 'left'},
           {
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
-            label: 'Tutorial',
-          },
-          {to: '/blog', label: 'Blog', position: 'left'},
-          {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/donut-party',
             label: 'GitHub',
             position: 'right',
           },
@@ -79,10 +79,10 @@ const config = {
       },
       footer: {
         style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
+        links: [], /* [
+                     {
+                   title: 'Docs',
+                   items: [
               {
                 label: 'Tutorial',
                 to: '/docs/intro',
@@ -117,9 +117,9 @@ const config = {
                 label: 'GitHub',
                 href: 'https://github.com/facebook/docusaurus',
               },
-            ],
-          },
-        ],
+              ],
+              },
+          ], */
         copyright: `Copyright © ${new Date().getFullYear()} Donut.`,
       },
       prism: {
