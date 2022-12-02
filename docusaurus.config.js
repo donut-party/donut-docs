@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Donut',
   tagline: 'sweet tools for building your web-based business',
-  url: 'https://donutpower.club',
+  url: 'https://donut.party',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
